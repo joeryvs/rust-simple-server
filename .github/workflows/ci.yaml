@@ -15,16 +15,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Print Version
-        runs: cargo --version;rustc --version
+        run: cargo --version;rustc --version
 
       - name: Check formatting
-        runs: cargo fmt --check --verbose
+        run: cargo fmt --check --verbose
 
       - name: Build solution
-        runs: cargo build --verbose
+        run: cargo build --verbose
 
       - name: Run Tests
-        runs: cargo test --verbose
+        run: cargo test --verbose
 
 
 
