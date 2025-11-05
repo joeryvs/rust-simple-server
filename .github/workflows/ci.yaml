@@ -1,0 +1,31 @@
+name: CI
+
+on: [push]
+
+
+jobs:
+
+  format-test-build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print Version
+        runs: cargo --version;rustc --version
+
+      - name: Check formatting
+        runs: cargo fmt --check --verbose
+
+      - name: Build solution
+        runs: cargo build --verbose
+
+      - name: Run Tests
+        runs: cargo test --verbose
+
+
+
+
